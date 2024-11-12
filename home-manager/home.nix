@@ -17,12 +17,27 @@
   home.stateVersion = "24.05";
 
   # Let Home Manager install and manage itself.
-  programs = {
-    home-manager.enable = true;
-    git = {
+  programs.home-manager.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName = "DormBrand";
+    userEmail = "dorm.brand@gmail.com";
+  };
+
+  programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
       enable = true;
-      userName = "DormBrand";
-      userEmail = "dorm.brand@gmail.com";
     };
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  services = {
+    ssh-agent.enable = true;
   };
 }
