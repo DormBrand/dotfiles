@@ -25,30 +25,11 @@
     userEmail = "dorm.brand@gmail.com";
   };
 
-  programs.bat.enable = true;
-  programs.broot.enable = true;
-  programs.exa.enable = true;
-  programs.ripgrep.enable = true;
-
   programs.zsh = {
     enable = true;
+    append = true;
 
-    history = {
-      append = true;
-    };
-
-    initExtra = "setopt INC_APPEND_HISTORY";
-    
-    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
-    antidote = {
-      enable = true;
-      plugins = [
-        "MichaelAquilina/zsh-you-should-use"
-        ""
-      ];
-    };
     
     oh-my-zsh = {
       enable = true;
@@ -57,6 +38,7 @@
 
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
   };
 
   services = {

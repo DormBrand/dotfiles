@@ -47,7 +47,9 @@
     keyMap = "de";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.zsh.enable = true;
+
+  users.defaultUserShell = pkgs.zsh;
   users.users.julius = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
@@ -64,11 +66,6 @@
       PasswordAuthentication = false;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    git
-    wget
-  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
