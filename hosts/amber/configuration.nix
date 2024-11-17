@@ -73,7 +73,7 @@
     lm_sensors
     e2fsprogs
     smartmontools
-    (import ./packages/scripts/nix-disk-burnin/disk-burnin.nix { inherit pkgs; })
+    (import ../../packages/scripts/nix-disk-burnin/disk-burnin.nix { inherit pkgs; })
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
