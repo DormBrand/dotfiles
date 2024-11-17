@@ -1,0 +1,3 @@
+[submodule "packages/scripts/nix-disk-burnin"]
+	path = packages/scripts/nix-disk-burnin
+	url = git@github.com:DormBrand/nix-disk-burnin.git

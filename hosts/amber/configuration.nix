@@ -67,6 +67,14 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    nix-index
+    hddtemp
+    lm_sensors
+    e2fsprogs
+    smartmontools
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   system.stateVersion = "24.11";

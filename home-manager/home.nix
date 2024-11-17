@@ -25,9 +25,11 @@
     userEmail = "dorm.brand@gmail.com";
   };
 
+  # shell
+
   programs.bat.enable = true;
   programs.broot.enable = true;
-  programs.exa.enable = true;
+  programs.eza.enable = true;
   programs.ripgrep.enable = true;
 
   programs.zsh = {
@@ -57,7 +59,21 @@
 
   programs.starship = {
     enable = true;
+    enableTransience = true;
+    settings = (builtins.fromTOML (builtins.readFile ../extras/starship.toml));
   };
+
+  programs.tmux = {
+    enable = true;
+  };
+
+  # monitoring
+
+  programs.htop = {
+    enable = true;
+  };
+
+  # services
 
   services = {
     ssh-agent.enable = true;
