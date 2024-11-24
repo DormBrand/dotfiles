@@ -67,6 +67,21 @@
     };
   };
 
+  hardware.sensor.hddtemp = {
+    enable = true;
+    drives = [
+      "/dev/disk/by-id/ata-SAMSUNG_HD502HJ_S20BJA0B918696"
+      "/dev/disk/by-id/ata-SAMSUNG_HD753LJ_S13UJ90S701628"
+      "/dev/disk/by-id/ata-ST12000DM0007-2GR116_ZJV2V08A"
+      "/dev/disk/by-id/ata-ST12000DM0007-2GR116_ZJV29496"
+    ];
+    dbEntries = [
+      "\"SAMSUNG HD502HJ\" 194 C \"Samsung 500GB\""
+      "\"SAMSUNG HD753LJ\" 190 C \"Samsung 750GB\""
+      "\"ST12000DM0007-2GR116\" 190 C \"Seagate Barracuda Pro 12GB ST12000DM0007ST12000DM0007\""
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     nix-index
     hddtemp
