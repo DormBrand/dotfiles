@@ -1,6 +1,11 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
+
+  imports = [
+    inputs.vscode-server.nixosModules.home
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "julius";
@@ -19,11 +24,15 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # dev
+
   programs.git = {
     enable = true;
     userName = "DormBrand";
     userEmail = "dorm.brand@gmail.com";
   };
+
+  services.vscode-server.enable = true;
 
   # shell
 
