@@ -1,7 +1,7 @@
 {...}:
 {
   imports = [
+    ./dev
     ./shell
-    ./vscode-server.nix
   ];
 }

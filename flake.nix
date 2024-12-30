@@ -22,6 +22,9 @@
         };
       };
     in {
+      nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+      formatter = pkgs.alejandra;
+      
       nixosConfigurations.amber = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/amber/configuration.nix
@@ -35,6 +38,13 @@
             home-manager.users.julius = import ./users/julius/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
+        ];
+      };
+
+      devShells."${system}".default = pkgs.mkShell {
+        packages = [
+          pkgs.alejandra
+          pkgs.nixd
         ];
       };
     };

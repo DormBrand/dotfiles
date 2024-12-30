@@ -1,13 +1,13 @@
 {inputs, lib, config, pkgs, ...}:
 with lib;
 let
-  cfg = config.modules.vscode-server;
+  cfg = config.modules.dev.vscode-server;
 in {
   imports = [
       inputs.vscode-server.nixosModules.home
   ];
 
-  options.modules.vscode-server = {
+  options.modules.dev.vscode-server = {
     enable = mkEnableOption "vscode server support";
   };
   

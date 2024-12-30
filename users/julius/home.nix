@@ -21,7 +21,8 @@
   programs.home-manager.enable = true;
 
   # dev
-  modules.vscode-server.enable = true;
+  modules.dev.vscode-server.enable = true;
+  modules.dev.direnv.enable = true;
 
   programs.git = {
     enable = true;
