@@ -1,6 +1,10 @@
-{lib, config, pkgs, ...}:
-with lib;
-let
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+with lib; let
   cfg = config.modules.shell.zsh;
 in {
   options.modules.shell.zsh = {
@@ -16,7 +20,7 @@ in {
       };
 
       initExtra = "setopt INC_APPEND_HISTORY";
-      
+
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
@@ -27,7 +31,7 @@ in {
           ""
         ];
       };
-      
+
       oh-my-zsh = {
         enable = true;
       };

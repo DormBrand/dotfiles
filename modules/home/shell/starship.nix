@@ -1,6 +1,10 @@
-{lib, config, pkgs, ...}:
-with lib;
-let
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+with lib; let
   cfg = config.modules.shell.starship;
 in {
   options.modules.shell.starship = {
@@ -11,7 +15,7 @@ in {
     programs.starship = {
       enable = true;
       enableTransience = true;
-      settings = (builtins.fromTOML (builtins.readFile ./starship.toml));
+      settings = builtins.fromTOML (builtins.readFile ./starship.toml);
     };
   };
 }

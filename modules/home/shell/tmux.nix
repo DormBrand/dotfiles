@@ -1,6 +1,10 @@
-{lib, config, pkgs, ...}:
-with lib;
-let
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+with lib; let
   cfg = config.modules.shell.tmux;
 in {
   options.modules.shell.tmux = {
