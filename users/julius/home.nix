@@ -2,10 +2,6 @@
 
 {
 
-  imports = [
-    inputs.vscode-server.nixosModules.home
-  ];
-
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "julius";
@@ -25,6 +21,7 @@
   programs.home-manager.enable = true;
 
   # dev
+  modules.vscode-server.enable = true;
 
   programs.git = {
     enable = true;
@@ -32,49 +29,11 @@
     userEmail = "dorm.brand@gmail.com";
   };
 
-  services.vscode-server.enable = true;
-
   # shell
-
-  programs.bat.enable = true;
-  programs.broot.enable = true;
-  programs.eza.enable = true;
-  programs.ripgrep.enable = true;
-
-  programs.zsh = {
-    enable = true;
-
-    history = {
-      append = true;
-    };
-
-    initExtra = "setopt INC_APPEND_HISTORY";
-    
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    antidote = {
-      enable = true;
-      plugins = [
-        "MichaelAquilina/zsh-you-should-use"
-        ""
-      ];
-    };
-    
-    oh-my-zsh = {
-      enable = true;
-    };
-  };
-
-  programs.starship = {
-    enable = true;
-    enableTransience = true;
-    settings = (builtins.fromTOML (builtins.readFile ../extras/starship.toml));
-  };
-
-  programs.tmux = {
-    enable = true;
-  };
+  modules.shell.zsh.enable = true;
+  modules.shell.starship.enable = true;
+  modules.shell.tmux.enable = true;
+  modules.shell.utils.enable = true;
 
   # monitoring
 

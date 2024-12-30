@@ -55,6 +55,7 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC9QDOf9w9OojC2ZGYsH4r1UOacEKyOZUeMVwuGlMsGY julius@DESKTOP-5A890JT"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmJWTVksmdAAj8wC83j/H+jSe9NbcyYklvTJA7eFhI7 Julius@Julius-Laptop"
     ];
     initialPassword = "justthebeginningofeverything";
   };
