@@ -1,5 +1,5 @@
 {...}: {
   imports = [
-    ./services
+    ./foundry.nix
   ];
 }

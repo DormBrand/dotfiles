@@ -10,6 +10,8 @@
     };
 
     vscode-server.url = "github:nix-community/nixos-vscode-server";
+
+    foundryvtt.url = "github:reckenrode/nix-foundryvtt";
   };
 
   outputs = {
@@ -44,6 +46,7 @@
           home-manager.extraSpecialArgs = {inherit inputs;};
         }
       ];
+      specialArgs = {inherit inputs;};
     };
 
     devShells."${system}".default = pkgs.mkShell {

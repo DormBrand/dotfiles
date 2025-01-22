@@ -91,10 +91,13 @@
     lm_sensors
     e2fsprogs
     smartmontools
+    openssl
     (import ../../packages/scripts/nix-disk-burnin/disk-burnin.nix {inherit pkgs;})
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   system.stateVersion = "24.11";
+
+  modules.services.foundry.enable = true;
 }

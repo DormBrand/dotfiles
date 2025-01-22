@@ -1,5 +1,22 @@
 {
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd",
-  "nix.formatterPath": ["nix", "fmt", "--", "--"]
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": ["alejandra"]
+      },
+      "nixpkgs": {
+        "expr": "import (builtins.getFlake \"/home/julius/dotfiles/flake.nix\").inputs.nixpkgs { } "
+      },
+      "options": {
+        "nixos": {
+          "expr": "import (builtins.getFlake \"/home/julius/dotfiles/flake.nix\").nixosConfigurations.amber.options "
+        },
+        "home-manager": {
+          "expr": "import (builtins.getFlake \"/home/julius/dotfiles/flake.nix\").nixosConfigurations.amber.options.home-manager.users.type.getSubOptions []"
+        }
+      }
+    }
+  }
 }
