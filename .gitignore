@@ -1,4 +1,2 @@
 *.save*
 .direnv
-*.crt
-*.key
