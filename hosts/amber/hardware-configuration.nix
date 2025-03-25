@@ -83,6 +83,31 @@
   };
 
   ## SnapRAID
+  services.snapraid = {
+    enable = true;
+    parityFiles = [
+      "/mnt/parity1/snapraid.parity"
+    ];
+    contentFiles = [
+      "/mnt/disk1/snapraid.content"
+      "/mnt/disk2/snapraid.content"
+      "/mnt/disk3/snapraid.content"
+    ];
+    dataDisks = {
+      d1 = "/mnt/disk1/";
+      d2 = "/mnt/disk2/";
+      d3 = "/mnt/disk3/";
+    };
+    sync.interval = "01:00";
+    scrub.interval = "weekly";
+    scrub.plan = 8;
+    scrub.olderThan = 10;
+    exclude = [
+      "*.unrecoverable"
+      "/tmp/"
+      "/lost+found/"
+    ];
+  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
